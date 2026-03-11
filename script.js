@@ -119,8 +119,23 @@ form.addEventListener('submit', e => {
 });
 
 /* ============================
-   EXP ITEM HOVER DETAIL
+   EMAIL (bypass obfuscation)
    ============================ */
+(function() {
+  const u = 'yy823';
+  const d = 'scarletmail.rutgers.edu';
+  const email = u + '@' + d;
+  const mailto = 'mailto:' + email;
+
+  const displayEl = document.getElementById('emailDisplay');
+  if (displayEl) displayEl.textContent = email;
+
+  const contactLink = document.getElementById('contactEmailLink');
+  if (contactLink) contactLink.href = mailto;
+
+  const hireBtn = document.getElementById('hireMeBtn');
+  if (hireBtn) hireBtn.href = mailto;
+})();
 // Ensure hover padding doesn't shift layout on items
 document.querySelectorAll('.exp-item').forEach(item => {
   item.addEventListener('mouseenter', () => {
